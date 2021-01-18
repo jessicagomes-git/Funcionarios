@@ -3,6 +3,6 @@
 </div>
 <div class="form-group">
     <label>Nome:</label>
-    <input type="text" class="form-control" [(ngModel)]="nome" (focus)="adicionado = false">
+    <input appCampoColorido type="text" class="form-control" [(ngModel)]="nome" (focus)="adicionado = false">
 </div>
 <button type="button" class="btn btn-primary" (click)="adicionar()" [disabled]="nome.length == 0">Adicionar</button>
