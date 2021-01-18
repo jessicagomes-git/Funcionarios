@@ -3,6 +3,12 @@
 </div>
 <div class="form-group">
     <label>Nome:</label>
-    <input appCampoColorido type="text" class="form-control" [(ngModel)]="nome" (focus)="adicionado = false">
+    <input appCampoColorido [cor]="'yellow'" type="text" class="form-control" 
+    [(ngModel)]="nome" (focus)="adicionado = false" #campo="campoColorido">
+    <!-- A variavel local campo representa uma instância da diretiva campoColorido -->
 </div>
-<button type="button" class="btn btn-primary" (click)="adicionar()" [disabled]="nome.length == 0">Adicionar</button>
+<button type="button" class="btn btn-primary botao" (click)="adicionar()" [disabled]="nome.length == 0">Adicionar</button>
+
+<!-- Posso chamar os metodos da diretiva com a variavel local campo no input que pega o campoColorido exportado da diretiva -->
+<button class="btn btn-info botao" (click)="campo.colorir()">Colorir</button>
+<button class="btn btn-info botao" (click)="campo.descolorir()">Descolorir</button>
